@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: examensarbete-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: examensarbete
+  template:
+    metadata:
+      labels:
+        app: examensarbete
+    spec:
+      containers:
+        - name: examensarbete
+          image: examensarbete-nodeapp:v1
+          securityContext:
+            privileged: true # Medvetet osäker
