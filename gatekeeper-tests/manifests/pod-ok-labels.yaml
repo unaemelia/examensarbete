@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: labeled-pod
+  namespace: examensarbete-app
+  labels:
+    team: um
+    owner: maddun
+spec:
+  containers:
+    - name: app
+      image: nginx:1.25

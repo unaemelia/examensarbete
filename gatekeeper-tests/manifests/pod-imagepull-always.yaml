@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: always-pull
+  namespace: examensarbete-app
+spec:
+  containers:
+    - name: app
+      image: nginx
+      imagePullPolicy: Always

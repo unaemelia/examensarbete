@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: safe-app
+  namespace: examensarbete-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: safe
+  template:
+    metadata:
+      labels:
+        app: safe
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          securityContext:
+            privileged: false

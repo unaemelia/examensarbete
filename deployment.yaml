@@ -2,6 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: examensarbete-app
+  namespace: examensarbete-app
+  labels:
+    app: examensarbete
+    team: um
+    owner: maddun
 spec:
   replicas: 1
   selector:
@@ -11,9 +16,11 @@ spec:
     metadata:
       labels:
         app: examensarbete
+        team: um
+        owner: maddun
     spec:
       containers:
         - name: examensarbete
-          image: examensarbete-nodeapp:v1
+          image: acrexamensarbete.azurecr.io/secuflow:v3
           securityContext:
-            privileged: true # Medvetet osäker
+            privileged: true

@@ -1,0 +1,20 @@
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: k8sdisallowimagepullpolicyalways
+spec:
+  crd:
+    spec:
+      names:
+        kind: K8sDisallowImagePullPolicyAlways
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package k8sdisallowimagepullpolicyalways
+
+        violation[{"msg": msg}] {
+          input.review.kind.kind == "Pod"
+          container := input.review.object.spec.containers[_]
+          container.imagePullPolicy == "Always"
+          msg := "Use of imagePullPolicy: Always is not allowed"
+        }

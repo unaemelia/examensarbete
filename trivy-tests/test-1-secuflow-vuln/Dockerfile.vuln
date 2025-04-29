@@ -1,0 +1,13 @@
+# Testfall: osäker bild
+FROM node:14
+
+WORKDIR /usr/src/app
+
+COPY ["package.json", "package-lock.json*", "./"]
+
+RUN npm install express@4.17.1 && npm install --production
+
+COPY . .
+
+EXPOSE 3000
+CMD ["node", "src/index.js"]
