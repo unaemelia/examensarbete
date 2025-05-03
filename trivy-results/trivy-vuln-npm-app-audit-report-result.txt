@@ -1,0 +1,208 @@
+>>
+
+                       === npm audit security report ===                        
+
+# Run  npm install lodash@4.17.21  to resolve 4 vulnerabilities
+
+  Moderate        Regular Expression Denial of Service (ReDoS) in lodash        
+
+  Package         lodash                                                        
+
+  Dependency of   lodash                                                        
+
+  Path            lodash                                                        
+
+  More info       https://github.com/advisories/GHSA-29mw-wpgm-hmr9             
+
+
+
+
+  High            Prototype Pollution in lodash                                 
+
+  Package         lodash                                                        
+
+  Dependency of   lodash                                                        
+
+  Path            lodash                                                        
+
+  More info       https://github.com/advisories/GHSA-p6mc-m468-83gw             
+
+
+
+
+  High            Command Injection in lodash                                   
+
+  Package         lodash                                                        
+
+  Dependency of   lodash                                                        
+
+  Path            lodash                                                        
+
+  More info       https://github.com/advisories/GHSA-35jh-r3h4-6jhm             
+
+
+
+
+  Critical        Prototype Pollution in lodash                                 
+
+  Package         lodash                                                        
+
+  Dependency of   lodash                                                        
+
+  Path            lodash                                                        
+
+  More info       https://github.com/advisories/GHSA-jf85-cpcp-j695             
+
+
+
+# Run  npm install express@5.1.0  to resolve 11 vulnerabilities
+SEMVER WARNING: Recommended action is a potentially breaking change
+
+  High            qs vulnerable to Prototype Pollution                          
+
+  Package         qs                                                            
+
+  Dependency of   express                                                       
+
+  Path            express > qs                                                  
+
+  More info       https://github.com/advisories/GHSA-hrpp-h998-j3pp             
+
+
+
+
+  High            qs vulnerable to Prototype Pollution                          
+
+  Package         qs                                                            
+
+  Dependency of   express                                                       
+
+  Path            express > body-parser > qs                                    
+
+  More info       https://github.com/advisories/GHSA-hrpp-h998-j3pp             
+
+
+
+
+  Moderate        Express.js Open Redirect in malformed URLs                    
+
+  Package         express                                                       
+
+  Dependency of   express                                                       
+
+  Path            express                                                       
+
+  More info       https://github.com/advisories/GHSA-rv95-896h-c2vc             
+
+
+
+
+  High            body-parser vulnerable to denial of service when url          
+                  encoding is enabled                                           
+
+  Package         body-parser                                                   
+
+  Dependency of   express                                                       
+
+  Path            express > body-parser                                         
+
+  More info       https://github.com/advisories/GHSA-qwcr-r2fm-qrc7             
+
+
+
+
+  Low             send vulnerable to template injection that can lead to XSS    
+
+  Package         send                                                          
+
+  Dependency of   express                                                       
+
+  Path            express > send                                                
+
+  More info       https://github.com/advisories/GHSA-m6fv-jmcg-4jfg             
+
+
+
+
+  Low             send vulnerable to template injection that can lead to XSS    
+
+  Package         send                                                          
+
+  Dependency of   express                                                       
+
+  Path            express > serve-static > send                                 
+
+  More info       https://github.com/advisories/GHSA-m6fv-jmcg-4jfg             
+
+
+
+
+  Low             serve-static vulnerable to template injection that can lead   
+                  to XSS                                                        
+
+  Package         serve-static                                                  
+
+  Dependency of   express                                                       
+
+  Path            express > serve-static                                        
+
+  More info       https://github.com/advisories/GHSA-cm22-4g7w-348p             
+
+
+
+
+  Low             express vulnerable to XSS via response.redirect()             
+
+  Package         express                                                       
+
+  Dependency of   express                                                       
+
+  Path            express                                                       
+
+  More info       https://github.com/advisories/GHSA-qw6h-vgh9-j6wx             
+
+
+
+
+  High            Unpatched `path-to-regexp` ReDoS in 0.1.x                     
+
+  Package         path-to-regexp                                                
+
+  Dependency of   express                                                       
+
+  Path            express > path-to-regexp                                      
+
+  More info       https://github.com/advisories/GHSA-rhx6-c78j-4q9w             
+
+
+
+
+  High            path-to-regexp outputs backtracking regular expressions       
+
+  Package         path-to-regexp                                                
+
+  Dependency of   express                                                       
+
+  Path            express > path-to-regexp                                      
+
+  More info       https://github.com/advisories/GHSA-9wv6-86v2-598j             
+
+
+
+
+  Low             cookie accepts cookie name, path, and domain with out of      
+                  bounds characters                                             
+
+  Package         cookie                                                        
+
+  Dependency of   express
+
+  Path            express > cookie
+
+  More info       https://github.com/advisories/GHSA-pxg6-pf52-xh8x
+
+
+
+found 15 vulnerabilities (5 low, 2 moderate, 7 high, 1 critical) in 52 scanned packages
+  run `npm audit fix` to fix 4 of them.
+  11 vulnerabilities require semver-major dependency updates.
