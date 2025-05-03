@@ -58,11 +58,12 @@ secuflow/
 │   ├── constraints/          # YAML definitions for constraints linked to the Rego policies
 │   ├── manifests/            # Test deployments and pods for validating policies
 │   └── policies/             # Rego policy files for validation (e.g., disallow privileged, require labels)
-├── trivy-tests/              # Vulnerable Dockerfiles and test images for Trivy scanning
 ├── src/                      # Node.js application source code (Express app)
+├── trivy-results/            # JSON- och TXT-rapporter från Trivy-scanningar (sårbara images, pakethanterare, bibliotek och misconfig)
+├── trivy-tests/              # Vulnerable Dockerfiles and test images for Trivy scanning
 ├── deploy.ps1                # Main deployment script: builds, scans, and deploys the app to AKS
-├── Dockerfile                # Container build file for the Node.js application
 ├── deployment.yaml           # Kubernetes deployment spec for the application (used in deploy.ps1)
+├── Dockerfile                # Container build file for the Node.js application
 └── run-gatekeeper-tests.ps1  # Script to automate Gatekeeper policy tests by applying manifests and cleaning up
 ```
 
