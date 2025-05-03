@@ -1,9 +1,0 @@
-apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
-metadata:
-  namespace: examensarbete-app
-  name: examensarbete-viewer
-rules:
-  - apiGroups: [""]
-    resources: ["pods", "services", "deployments"]
-    verbs: ["get", "list", "watch"]
