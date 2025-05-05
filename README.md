@@ -1,4 +1,4 @@
-# Secuflow: DevSecOps Policy Enforcement and Security Scanning in Kubernetes
+# Secuflow: Automation of security checks in CI/CD for Kubernetes
 
 ## About the Project
 This project is part of the final examination (Examensarbete) for the *Systemutvecklare DevSecOps* education program. It explores how security policies and automated scanning tools can be integrated into Kubernetes-based CI/CD workflows. The goal is to demonstrate practical enforcement of container security best practices using:
