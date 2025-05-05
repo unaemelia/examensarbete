@@ -59,7 +59,7 @@ secuflow/
 │   ├── manifests/            # Test deployments and pods for validating policies
 │   └── policies/             # Rego policy files for validation (e.g., disallow privileged, require labels)
 ├── src/                      # Node.js application source code (Express app)
-├── trivy-results/            # JSON- och TXT-rapporter från Trivy-scanningar (sårbara images, pakethanterare, bibliotek och misconfig)
+├── trivy-results/            # JSON and TXT reports from Trivy scans (vulnerable images, package managers, libraries and misconfig)
 ├── trivy-tests/              # Vulnerable Dockerfiles and test images for Trivy scanning
 ├── deploy.ps1                # Main deployment script: builds, scans, and deploys the app to AKS
 ├── deployment.yaml           # Kubernetes deployment spec for the application (used in deploy.ps1)
