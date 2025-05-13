@@ -22,16 +22,25 @@ docker push $imageUri
 
 # 5. Trivy Image Scanning
 Write-Host "Using Trivy Image Scanning..."
-& $trivyPath image $imageUri
+& $trivyPath image $imageUri --scanners vuln --skip-dirs ./trivy-results
 
 # 6. Get AKS credentials
 Write-Host "Getting AKS credentials..."
 az aks get-credentials --resource-group $resourceGroup --name $aksClusterName
 
-# 7. Apply OPA Gatekeeper policies
-Write-Host "Applying Gatekeeper ConstraintTemplate and Constraint..."
-kubectl apply -f "D:\repos\secuflow\policies\k8sdisallowprivileged_template.yaml"
-kubectl apply -f "D:\repos\secuflow\policies\k8sdisallowprivileged_constraint.yaml"
+# 7. Apply OPA Gatekeeper ConstraintTemplates and Constraints
+Write-Host "Applying Gatekeeper ConstraintTemplates and Constraints..."
+
+# Apply all templates
+kubectl apply -f ".\gatekeeper-tests\constraints\disallow-privileged-template.yaml"
+kubectl apply -f ".\gatekeeper-tests\constraints\require-labels-template.yaml"
+kubectl apply -f ".\gatekeeper-tests\constraints\disallow-imagepullpolicy-always-template.yaml"
+
+# Apply all constraints
+kubectl apply -f ".\gatekeeper-tests\constraints\disallow-privileged.yaml"
+kubectl apply -f ".\gatekeeper-tests\constraints\require-labels.yaml"
+kubectl apply -f ".\gatekeeper-tests\constraints\disallow-imagepullpolicy-always.yaml"
+
 
 # 8. Apply Deployment
 Write-Host "Applying initial deployment YAML..."
